@@ -14,36 +14,44 @@ function romanToInt(s: string): number {
   let total: number = 0;
 
   // split string into array, 
-  let romanNumeral = s.split('').reverse();
-  console.log(romanNumeral)
+  let arr = s.split('').reverse();
+  console.log(arr) 
 
-  for ( let i = 0; i < romanNumeral.length; i++) {
-    if ( romanNumeral[i] === 'V') {
-      total += 
-      i++
-    } 
-
-    // map.get(romanNumeral[i])
-
-
-    console.log(map.get(romanNumeral[i])) 
+  for(let i: number = 0; i < arr.length; i++) {
+    if(arr[i] === 'V' || arr[i] === 'X') {
+       if(arr[(i + 1)] === 'I') {
+          total += (map.get(arr[i]) - map.get('I'));
+          i++;
+       }
+       else {
+          total += map.get(arr[i]);
+       }
+    }
+    else if(arr[i] === 'L' || arr[i] === 'C') {
+       if(arr[(i + 1)] === 'X') {
+          total += (map.get(arr[i]) - map.get('X'));
+          i++;
+       }
+       else {
+          total += map.get(arr[i]);
+       }
+    }
+    else if(arr[i] === 'D' || arr[i] === 'M') {
+       if(arr[(i + 1)] === 'C') {
+          total += (map.get(arr[i]) - map.get('C'));
+          i++;
+       }
+       else {
+          total += map.get(arr[i]);
+       }
+    }
+    else {
+       total += map.get(arr[i]);
+    }
   }
-  
-
-
-    // if following index is irrelevant
-      // add value to total
-    
-    // else 
-      // calculate appropriate value
-      // add value to total
-      // increment index
-
-  return total;
+  return total
 };
 
+console.log(romanToInt('LVIII'))
 
-/* Symbol       Value
- */
-
-console.log(romanToInt('IIV'))
+// works but very inefficient
