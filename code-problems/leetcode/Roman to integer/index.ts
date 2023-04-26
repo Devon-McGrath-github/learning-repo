@@ -17,6 +17,10 @@ function romanToInt(s: string): number {
   let arr = s.split('').reverse();
   console.log(arr) 
 
+      // refactor entire for loop with more concise logic. Excellent example code had a 
+      //for loop that checked the value of the following index to current and if < 
+      // calculated value to add to total. 
+
   for(let i: number = 0; i < arr.length; i++) {
     if(arr[i] === 'V' || arr[i] === 'X') {
        if(arr[(i + 1)] === 'I') {
