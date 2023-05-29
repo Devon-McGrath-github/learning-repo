@@ -1,0 +1,9 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0 auto;
+}
