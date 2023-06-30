@@ -27,11 +27,9 @@ function all(array, callback) {
   return callback(array[0]) ? all(array.slice(1), callback) : false;
 }
 
-const exampleCallback = (num) => {
+// testing it:
+var allAreLessThanSeven = all([1, 2, 9], function (num) {
   return num < 7;
-};
+});
 
-console.log("Should return false: " + all([1, 2, 9], exampleCallback));
-console.log("Should return true: " + all([1, 2, 3], exampleCallback));
-console.log("Should return true: " + all([], exampleCallback));
-console.log("Should return false: " + all([8], exampleCallback));
+console.log(allAreLessThanSeven); // false
