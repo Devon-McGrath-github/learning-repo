@@ -33,3 +33,5 @@ var allAreLessThanSeven = all([1, 2, 9], function (num) {
 });
 
 console.log(allAreLessThanSeven); // false
+
+// Question 5:
