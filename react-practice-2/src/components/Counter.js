@@ -18,6 +18,10 @@ export default class Counter extends Component {
     console.log("-------------------");
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
   render() {
     console.log("Render");
 
@@ -33,5 +37,10 @@ export default class Counter extends Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log("Component Did Update");
     console.log("--------------------");
+  }
+
+  componentWillUnmount() {
+    console.log("Component Will Unmount");
+    console.log("----------------------");
   }
 }
