@@ -20,6 +20,8 @@ const App = () => {
       document.removeEventListener('click', changeColorOnClick);
     };
   }, [color]);
+  // NOTE: useEffect(() => {}, []) syntax.
+  // The array at the end is a 'dependency array'. it is optional, but used more often than not.
 
   const incrementCount = () => {
     setCount(count + 1);
@@ -36,7 +38,7 @@ const App = () => {
           backgroundColor: color,
         }}
       >
-        This div can change color. Click on me!
+        This div can change color. Click ANYWHERE
       </div>
       <div>{count}</div>
       <button onClick={incrementCount}>Increment</button>
