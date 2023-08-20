@@ -1,105 +1,305 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>My test page</title>
-    <link rel="stylesheet" href="payment-form.css">
-  </head>
-  <body>
-    <form action="">
-      <h1>Payment Form</h1>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My test page</title>
+  <link rel="stylesheet" href="payment-form.css">
+</head>
+
+<body>
+  <form action="">
+    <section>
+      <h1>Important</h1>
       <p>
-        Required fields are followed by
-        <strong><span aria-label="required">*</span></strong>.
+        Please make sure you have served the Notice of Adjudication on the other party/parties before completing this
+        application form.
+        <br>
+        <br>
+        Unless the parties have agreed to the Building Disputes Tribunal making the appointment of an adjudicator, you
+        must make this application for appointment within two to five working days of service of the Notice of
+        Adjudication.
+        <br>
+        <br>
+
+        This is a statutory requirement. If the parties have agreed to the Building Disputes Tribunal making the
+        appointment of an adjudicator, you may proceed to complete this application at any time.
+
       </p>
 
-      <section>
-        <h2>Contact information</h2>
-        <fieldset>
-          <legend>Title</legend>
+
+      <div>
+        <h3>What Remedy are you seeking?</h3>
+        <ul>
+          <li>
+            <label for="remedy-1">
+              <input type="radio" id="remedy-1" name="remedy-sought" value="Sum" />
+              A sum of Money
+            </label>
+          </li>
+          <li>
+            <label for="remedy-2">
+              <input type="radio" id="remedy-2" name="remedy-sought" value="Sum &/or Declaratory Relief" />
+              A sum of money and/or declaratory relief (a declaration of rights and obligations)
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Claimed Amount:</h3>
+        <p>Enter claimed amount (excluding interest)</p>
+        <label for="claimed-amount">
+          <input type="number" id="claimed-amount" name="claimed-amount" min="0" placeholder="0.00" />
+        </label>
+      </div>
+    </section>
+    <hr>
+
+    <section>
+      <h1>Key Dates</h1>
+      <div>
+        <h3>When was the construction contract entered into?</h3>
+        <label for="contract-date">
+          <span>please enter MM/YY</span>
+          <strong><span aria-label="required">*</span></strong>
+        </label>
+        <input type="text" id="contract-date" required="true" placeholder="MM/YY"
+          pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$" />
+      </div>
+
+      <div>
+        <h3>Have you served a notice of adjudication on the other party or parties to the construction contract (and
+          where appropriate for the purpose of the adjudication, on the owner of the construction site)?</h3>
+        <ul>
+          <li>
+            <label for="served-notice">
+              <input type="radio" id="served-notice" name="notice-served" value="true" />
+              Yes
+            </label>
+          </li>
+          <li>
+            <label for="served-notice-no">
+              <input type="radio" id="served-notice-no" name="notice-served" value="false" />
+              No
+            </label>
+          </li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h3>When was the notice of adjudication served?</h3>
+        <span>Please note if your contract was entered after 1 December 2015, this application for the appointment of an
+          adjudicator must
+          be made between the second and fifth working day after service of the Notice of Adjudication.
+        </span>
+        <label for="contract-date">
+          <strong><span aria-label="required">*</span></strong>
+        </label>
+        <input type="date" id="contract-date" required="true" placeholder="" />
+      </div>
+
+      <div>
+        <h3>Notice of Adjudication</h3>
+        <span>Please upload a copy of your notice of adjudication</span>
+        <label for="notice-of-adjudication">Select a file:</label>
+        <input type="file" id="notice-of-adjudication" name="notice-of-adjudication">
+      </div>
+
+    </section>
+
+    <hr>
+
+    <section>
+      <h1>Claimant</h1>
+
+      <div>
+        <h3>Who is the claimant</h3>
+        <ul>
+          <li>
+            <label for="individual">
+              <input type="radio" id="individual" name="claimant-type" value="individual" />
+              an individual(s) in their personal capacity
+            </label>
+          </li>
+          <li>
+            <label for="company">
+              <input type="radio" id="company" name="claimant-type" value="company" />
+              a company or incorporated society
+            </label>
+          </li>
+          <li>
+            <label for="trustee">
+              <input type="radio" id="trustee" name="claimant-type" value="trustee" />
+              an individual(s) in their capactiy as a trustee of a trust
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <label for="claimants-name">
+          <h3>Claimants full legal name</h3>
+        </label>
+        <input type="text" id="claimants-name" name="claimants-name"
+          placeholder="Insert Full or Legal Name of Claimant" />
+      </div>
+
+      <div>
+        <h3>Is the Claimant Represented?</h3>
+        <ul>
+          <li>
+            <label for="self-represented">
+              <input type="radio" id="self-represented" name="representation" value="true" />
+              Self Represented
+            </label>
+          </li>
+          <li>
+            <label for="authorized">
+              <input type="radio" id="authorized" name="representation" value="false" />
+              Represented by a person authorized to act on the claimants behalf
+            </label>
+          </li>
+        </ul>
+
+        <div>
+          <h2><strong>CONDITIONAL WIP SECTION</strong></h2>
+        </div>
+
+      </div>
+
+
+      <div>
+        <h3>If someone else needs to receive communications on behalf of the claimant, please enter email address here
+        </h3>
+        <label for="alt-contact-email">
+          <span>Email: </span>
+          <strong><span aria-label="required">*</span></strong>
+        </label>
+        <input type="email" id="alt-contact-email" name="alt-contact-email" />
+      </div>
+
+    </section>
+
+    <hr>
+
+    <section>
+      <h2><strong>essentially a repeat of previous</strong></h2>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2><strong>essentially a repeat of previous with conditional at start</strong></h2>
+    </section>
+
+    <hr>
+
+    <section>
+      <h1>Nature of Claim</h1>
+
+      <div>
+        <h3>On what basis are you bringing your claim?</h3>
+
+        <div>
           <ul>
             <li>
-              <label for="title_1">
-                <input type="radio" id="title_1" name="title" value="K" />
-                King
+              <label for="default">
+                <input type="radio" id="default" name="claim-basis" value="true" />
+                Self Represented
               </label>
             </li>
             <li>
-              <label for="title_2">
-                <input type="radio" id="title_2" name="title" value="Q" />
-                Queen
+              <label for="Merits">
+                <input type="radio" id="Merits" name="claim-basis" value="false" />
+                Merits
               </label>
             </li>
             <li>
-              <label for="title_3">
-                <input type="radio" id="title_3" name="title" value="J" />
-                Joker
+              <label for="default-with-merits">
+                <input type="radio" id="default-with-merits" name="claim-basis" value="false" />
+                Default Liability and merits
               </label>
             </li>
           </ul>
-        </fieldset>
-        <p>
-          <label for="name">
-            <span>Name: </span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input type="text" id="name" name="username" />
-        </p>
-        <p>
-          <label for="mail">
-            <span>Email: </span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input type="email" id="mail" name="usermail" />
-        </p>
-        <p>
-          <label for="pwd">
-            <span>Password: </span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input type="password" id="pwd" name="password" />
-        </p>
-      </section>
-      
-      <section>
-        <h2>Payment information</h2>
-        <p>
-          <label for="card">
-            <span>Card type:</span>
-          </label>
-          <select id="card" name="usercard">
-            <option value="visa">Visa</option>
-            <option value="mc">Mastercard</option>
-            <option value="amex">American Express</option>
-          </select>
-        </p>
-        <p>
-          <label for="number">
-            <span>Card number:</span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input type="tel" id="number" name="cardnumber" />
-        </p>
-        <p>
-          <label for="expiration">
-            <span>Expiration date:</span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input
-            type="text"
-            id="expiration"
-            required="true"
-            placeholder="MM/YY"
-            pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$" />
-        </p>
-      </section>
+        </div>
 
-      <section>
-        <p>
-          <button type="submit">Validate the payment</button>
-        </p>
-      </section>
-    </form>
-  </body>
+        <label for="dispute-description">Brief of the dispute:</label>
+
+        <textarea id="dispute-description" name="dispute-description" rows="4" cols="50"></textarea>
+
+      </div>
+
+      <div>
+        <h3>Charging order (over land owned by respondent)</h3>
+        <span>Does the claimant seek the adjudicator's approval under section 29 of the Act for the issue of a charging
+          order in respect of a construction site owned by the respondent?</span>
+        <ul>
+          <li>
+            <label for="respondent-owned-yes">
+              <input type="radio" id="respondent-owned-yes" name="charging-respondent-owned" value="true" />
+              Yes
+            </label>
+          </li>
+          <li>
+            <label for="respondent-owned-no">
+              <input type="radio" id="respondent-owned-no" name="charging-respondent-owned" value="false" />
+              No
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Charging order (over land owned by an associate of the respondent)</h3>
+        <span>Does the claimant seek the adjudicator's approval under section 30(b) of the Act for the issue of a
+          charging order in respect of the construction site owned by an associate of the respondent (the Owner)?</span>
+        <ul>
+          <li>
+            <label for="associate-owned-yes">
+              <input type="radio" id="associate-owned-yes" name="charging-associate-owned" value="true" />
+              Yes
+            </label>
+          </li>
+          <li>
+            <label for="associate-owned-no">
+              <input type="radio" id="associate-owned-no" name="charging-associate-owned" value="false" />
+              No
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Is a site inspection likely to be requested?</h3>
+        <span>Please advise whether the claimant is likely to request the Adjudicator to carry out an inspection of any
+          construction work or any other thing to which the dispute relates (Please note that any inspection will be
+          carried out at the sole discretion of the Adjudicator)</span>
+        <ul>
+          <li>
+            <label for="site-inspection-yes">
+              <input type="radio" id="site-inspection-yes" name="site-inspection" value="true" />
+              Yes
+            </label>
+          </li>
+          <li>
+            <label for="site-inspection-no">
+              <input type="radio" id="site-inspection-no" name="site-inspection" value="false" />
+              No
+            </label>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+
+      <button type="submit">Submit</button>
+
+    </section>
+  </form>
+</body>
+
 </html>
